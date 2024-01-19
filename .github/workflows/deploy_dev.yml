@@ -68,7 +68,7 @@ jobs:
       - name: Build & Test
         run: |
           ./gradlew build --daemon --build-cache --parallel
-          echo '${{ secrets.APPLICATION_DEPLOY_YML }}' >> application-deploy.yml
+          echo '${{ secrets.APPLICATION_DEPLOY_YML }}' > application.yml
           java -Djarmode=layertools -jar build/libs/doore-0.0.1-SNAPSHOT.jar extract
 
       - name: Compress
